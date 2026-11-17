@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/start.css">
+  <link rel="stylesheet" href="../css/Modoclaro.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <canvas id="waveCanvas"></canvas>
+  <canvas id="partCanvas"></canvas>
+
+  <nav>
+    <a href="start.html" class="nav-logo">Blue<em>'s</em></a>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proposito">Por qué Blue's</a></li>
+      <li><a href="blues.html" class="nav-button">Blues</a></li>
+      <li><a href="#equipo">Nosotros</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="home.html" class="home-access" hidden>Explorar Blue's</a>
+      <a href="iniciosesion.html" class="inicio">Iniciar sesión</a>
+      <a href="Registro.html" class="registro">Registrarse</a>
+    </div>
+  </nav>
+
+  
+  <div class="top-access-banner">
+    <p class="access-message" id="access-message" role="status"></p>
+  </div>
+
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Musicoterapia Digital · Crea-J 2026
+      </div>
+      <h1>
+        Sana tu alma
+        <em>con el blues.</em>
+      </h1>
+      <p class="hero-sub">
+        Una plataforma interactiva que usa el poder terapéutico de la música para acompañarte en tu bienestar emocional, adaptada a ti.
+      </p>
+      <p class="hero-quote">
+        "La música expresa lo que no puede ser dicho y aquello sobre lo que es imposible permanecer en silencio."
+        <cite>— Victor Hugo</cite>
+      </p>
+    </div>
+
+    <div class="vinyl-sombra">
+        <img src="../images/disco.png" alt="discovinyl" class="vinyl-record"  width="410px">
+    </div>
+    
+    <div class="brazito">
+      <svg class="tonearm-svg" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="80" cy="12" r="9" fill="#1e2030" stroke="#3d54a0" stroke-width="1.5"/>
+        <circle cx="80" cy="12" r="4" fill="#3d54a0" opacity="0.6"/>
+        <line x1="80" y1="12" x2="22" y2="175" stroke="#2a3a6e" stroke-width="3" stroke-linecap="round"/>
+        <line x1="80" y1="12" x2="22" y2="175" stroke="rgba(61,84,160,0.3)" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="22" cy="175" r="5" fill="#3d54a0" opacity="0.8"/>
+        <line x1="22" y1="175" x2="10" y2="192" stroke="#2a3a6e" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <div class="sound-bridge" aria-label="El poder de la música">
+      <div class="sound-bridge-heading">
+        <span class="sound-bridge-line"></span>
+        <span>El poder de la música</span>
+      </div>
+      <div class="sound-beats" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="sound-bridge-points">
+        <span>Escucha</span>
+        <span>Respira</span>
+        <span>Conecta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="purpose-section" id="proposito">
+    <div class="purpose-heading">
+      <p class="section-label">— El origen de Blue's</p>
+      <h2>La música también puede ser un espacio para <em>sentir y sanar.</em></h2>
+    </div>
+    <div class="purpose-copy">
+      <p>Blue's nació con la idea de acercar la musicoterapia a más personas de una forma sencilla, humana y accesible. Creamos este espacio para acompañar diferentes momentos emocionales mediante sesiones y selecciones musicales pensadas para cada estado de ánimo.</p>
+      <p>La música no sustituye la atención de un profesional, pero puede convertirse en una herramienta de apoyo para relajarse, expresar lo que sentimos, recuperar recuerdos y encontrar un momento de calma.</p>
+      <div class="purpose-points">
+        <span>Acompañamiento emocional</span>
+        <span>Sesiones adaptadas a ti</span>
+        <span>Un ritmo para cada momento</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabla">
+    <div class="tabla-layout">
+      <div class="service-accordion" aria-label="Servicios de musicoterapia">
+        <p class="section-label">— Servicios y beneficios</p>
+        <details class="service-item" open>
+          <summary>Musicoterapia infantil <span aria-hidden="true">+</span></summary>
+          <div class="service-details">
+            <p><strong>Dirigido a:</strong> Niños con TDAH, autismo (TEA) o retraso en el lenguaje.</p>
+            <p><strong>Beneficios:</strong> Mejora la atención, estimula la comunicación y facilita la expresión emocional.</p>
+          </div>
+        </details>
+        <details class="service-item">
+          <summary>Estimulación prenatal <span aria-hidden="true">+</span></summary>
+          <div class="service-details">
+            <p><strong>Dirigido a:</strong> Gestantes a partir del segundo trimestre y sus parejas.</p>
+            <p><strong>Beneficios:</strong> Fomenta la calma, la conexión familiar y la expresión de emociones durante el embarazo.</p>
+          </div>
+        </details>
+        <details class="service-item">
+          <summary>Atención a adultos y manejo del estrés <span aria-hidden="true">+</span></summary>
+          <div class="service-details">
+            <p><strong>Dirigido a:</strong> Personas con ansiedad, depresión o estrés laboral.</p>
+            <p><strong>Beneficios:</strong> Ayuda a reducir la tensión, fortalece la calma y acompaña distintos procesos emocionales.</p>
+          </div>
+        </details>
+        <details class="service-item">
+          <summary>Estimulación cognitiva para adultos mayores <span aria-hidden="true">+</span></summary>
+          <div class="service-details">
+            <p><strong>Dirigido a:</strong> Adultos mayores y personas con Alzheimer o demencia temprana.</p>
+            <p><strong>Beneficios:</strong> Evoca recuerdos, mantiene la agilidad mental y fomenta la socialización.</p>
+          </div>
+        </details>
+      </div>
+
+      <aside class="tabla-visual" aria-label="Imagen temática de blues">
+        <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=900&q=80" alt="Persona junto a una guitarra con ambiente de blues">
+        <div class="tabla-visual-caption">
+          <span>Blue's</span>
+          <p>Un ritmo que acompaña, calma y hace sentir.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+    <section class="team-section" id="equipo">
+    <div class="team-content">
+      <p class="section-label">— Quiénes somos</p>
+      <h2>El <em>equipo</em></h2>
+      <p>Somos un grupo de estudiantes apasionados por la tecnología, la música y el bienestar emocional. Creamos Blue's para acercar la ayuda emocional de una forma más humana, creativa y accesible.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">🎸</div>
+        <div class="team-name">Iker Mejía</div>
+        <div class="team-id">20140226</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🎹</div>
+        <div class="team-name">Enrique Ramos</div>
+        <div class="team-id">20170028</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🎵</div>
+        <div class="team-name">Samantha Rivas</div>
+        <div class="team-id">20230386</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🎼</div>
+        <div class="team-name">Fernanda Romualdo</div>
+        <div class="team-id">20250732</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/fondo.js"></script>
+  <script src="../js/idioma.js"></script>
+  <script src="../js/modoclaro.js"></script>
+  <script>
+    const accessMessage = sessionStorage.getItem('bluesAccessMessage');
+    const accessMessageElement = document.getElementById('access-message');
+    if (accessMessage && accessMessageElement) {
+      accessMessageElement.textContent = accessMessage;
+      accessMessageElement.classList.add('is-visible');
+      sessionStorage.removeItem('bluesAccessMessage');
+    }
+
+    const startSections = document.querySelectorAll('section[id]');
+    const startNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const setActiveStartLink = () => {
+      let currentSection = '';
+
+      startSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 180 && rect.bottom >= 180) {
+          currentSection = section.id;
+        }
+      });
+
+      const reachedBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (reachedBottom && startSections.length) {
+        currentSection = startSections[startSections.length - 1].id;
+      }
+
+      startNavLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === '#' + currentSection;
+        link.classList.toggle('active', isActive);
+      });
+    };
+
+    window.addEventListener('scroll', setActiveStartLink, { passive: true });
+    setActiveStartLink();
+  </script>
+</body>
+</html>

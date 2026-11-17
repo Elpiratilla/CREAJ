@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/Modoclaro.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="mood-alegria">
+
+    <canvas id="waveCanvas"></canvas>
+    <canvas id="partCanvas"></canvas>
+
+    <nav>
+        <a href="home.html" class="nav-logo">Blue<em>'s</em></a>
+        <ul class="nav-links">
+          <li><a href="home.html">Inicio</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="mood-pill"><span class="mood-dot"></span>Playlist de musicoterapia · Alegría</div>
+          <h1>
+            Emoción:
+            <em>Alegría</em>
+          </h1>
+          <p class="hero-sub">
+           Ritmos que sanan, abrazan y contagian. La banda sonora perfecta para celebrar los días buenos y contagiar el alma de pura felicidad.
+          </p>
+          <p class="hero-quote">
+            "La alegría es poder, y el poder es capaz de derribar cualquier barrera."
+            <cite> – Frida Kahlo</cite>
+          </p>
+
+          <div class="playlist-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="track-search" placeholder="Buscar canción o artista en esta playlist…" autocomplete="off">
+            <span class="search-count" id="search-count"></span>
+          </div>
+        </div>
+
+          <div class="emocionimg">
+            <img src="../images/Feliz.jpg" alt="feliz">
+            <div class="vinyl-badge" aria-hidden="true">
+              <div class="disc">
+                <div class="label"><span>Alegría</span></div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+<div class="app-shell">
+    <main class="library">
+        <div class="tracklist">
+            <button class="tracklist-toggle" id="tracklist-toggle" aria-expanded="true" aria-controls="tracklist-body">
+                <span class="tracklist-toggle-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    Canciones
+                    <span class="track-count-badge" id="track-count-badge">0</span>
+                </span>
+                <span class="collapsed-hint">Toca para ver las canciones</span>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="tracklist-body" id="tracklist-body">
+                <div class="tracklist-body-inner">
+                    <div class="track-columns">
+                        <span>#</span>
+                        <span>Título</span>
+                        <span> - Álbum - </span>
+                        <span style="text-align:right;">Duración</span>
+                    </div>
+                    <div id="track-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="spotify-player">
+        <h4 class="spotify-player-label">Reproduciendo</h4>
+        <iframe id="spotify-frame" src="" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </aside>
+</div>
+
+    <div id="custom-tracks-source" style="display:none;">
+
+        <div class="custom-track"
+            data-title="Signed, Sealed, Delivered (I'm Yours)"
+            data-artist="Stevie Wonder"
+            data-album="The Definitive Collection"
+            data-art="NC"
+            data-spotify="https://open.spotify.com/intl-es/track/2C5SI38AMmqckQGnD1H2FO?si=988ef53eabf74b49"
+            data-info="Un clásico alegre de soul y funk sobre pedir perdón, admitir errores en una relación y entregarse por completo a la persona amada."></div>
+
+        <div class="custom-track"
+            data-title="Respect"
+            data-artist="Aretha Franklin"
+            data-album="I Never Loved a Man"
+            data-art="BM"
+            data-spotify="https://open.spotify.com/intl-es/track/7s25THrKz86DM225dOYwnr?si=3a7a5eea30dd49b6"
+            data-info="Himno enérgico de R&B y empoderamiento que exige respeto y valoración equitativa en una relación de pareja."></div>
+
+        <div class="custom-track"
+            data-title="What A Wonderful World"
+            data-artist="Louis Armstrong"
+            data-album="Saturday Night Fever"
+            data-art="BG"
+            data-spotify="https://open.spotify.com/intl-es/track/29U7stRjqHU6rMiS8BfaI9?si=e462fd92f1da466a"
+            data-info="Un himno a la esperanza y al optimismo que invita a apreciar la belleza de la naturaleza, las conexiones humanas y las cosas simples de la vida."></div>
+
+        <div class="custom-track"
+            data-title="September"
+            data-artist="Earth, Wind & Fire"
+            data-album="The Best Of Earth, Wind & Fire Vol. 1"
+           data-art="S"
+            data-spotify="https://open.spotify.com/intl-es/track/2grjqo0Frpf2okIBiifQKs?si=6f3489c0a0154109"
+            data-info="Canción de disco/funk llena de energía festiva que celebra el amor, la alegría y los recuerdos memorables compartidos."></div>
+
+        <div class="custom-track"
+            data-title="Feeling Good"
+            data-artist="Michael Bublé"
+            data-album="It's Time"
+            data-art="EF"
+            data-spotify="https://open.spotify.com/intl-es/track/1AM8QdDFZMq6SrrqUnuQ9P?si=c2e07a168e54498a"
+            data-info="Versión con arreglos de big band y jazz sobre la liberación, la renovación y la confianza ante un nuevo comienzo en la vida."></div>
+
+        <div class="custom-track"
+            data-title="Uptown Funk"
+            data-artist="Mark Ronson, Bruno Mars"
+            data-album="Uptown Special"
+            data-art="HS"
+            data-spotify="https://open.spotify.com/intl-es/track/32OlwWuMpZ6b0aN2RZOeMS?si=7f0437e32c424a30"
+            data-info="Éxito de funk-pop centrado en la diversión, el estilo, el carisma y la actitud fiestera."></div>
+
+        <div class="custom-track"
+            data-title="Come Fly With Me"
+            data-artist="Frank Sinatra"
+            data-album=": Come Fly With Me (Mono Version)"
+            data-art="FM"
+            data-spotify="https://open.spotify.com/intl-es/track/1GcPhT7osBb4LEJnQ0tmfj?si=394c09711e234ec9"
+            data-info="Un clásico de jazz/big band lleno de encanto y sofisticación que invita a viajar, explorar el mundo y disfrutar del romance sin preocupaciones."></div>
+
+        <div class="custom-track"
+            data-title="Valerie"
+            data-artist="Mark Ronson, Amy Winehouse"
+            data-album="Version"
+            data-art="SW"
+            data-spotify="https://open.spotify.com/intl-es/track/6kopmMZiyLmw7h66uXcXR7?si=0759db595b19430c"
+            data-info="Tema ritmado de soul/pop que expresa la nostalgia y el anhelo por el regreso de un amor o una persona cercana que se encuentra lejos."></div>
+
+        <div class="custom-track"
+            data-title="I Got You (I Feel Good)"
+            data-artist="James Brown & The Famous Flames"
+            data-album="I Got You (I Feel Good)"
+            data-art="EW"
+            data-spotify="https://open.spotify.com/intl-es/track/5haXbSJqjjM0TCJ5XkfEaC?si=d146f80045e64785"
+            data-info="Himno icónico del funk/soul desbordante de alegría y optimismo, centrado en la euforia de sentirse enamorado y pleno."></div>
+
+        <div class="custom-track"
+            data-title="I'm Yours"
+            data-artist="Jason Mraz"
+            data-album="We Sing. We Dance. We Steal Things."
+            data-art="BK"
+            data-spotify="https://open.spotify.com/intl-es/track/1EzrEOXmMH3G43AXT1y7pA?si=6435e4bfca5e486c"
+            data-info="Canción de pop/reggae acústico con un mensaje relajado sobre dejar de lado las dudas, dejarse llevar y entregarse abiertamente al amor."></div>
+
+    </div>
+    <section class="science-section">
+    <div class="science-card">
+        <div class="mood-pill"><span class="mood-dot"></span>Por qué esta selección</div>
+        <h2 class="science-title">La ciencia detrás de <em>esta playlist</em></h2>
+        <p class="science-intro">Construida alrededor de alta valencia positiva y activación moderada/alta: ritmos marcados, armonías luminosas e interpretaciones vocales expresivas.</p>
+
+        <div class="science-carousel" id="science-carousel">
+            <div class="science-point active">
+                <div class="science-point-image">
+                    <img src="../images/ciencia1.jpg" alt="Tempo rápido y modo mayor">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Tempo rápido, <em>modo mayor</em></div>
+                    <p>El tempo y el modo musical son dos de las señales más importantes para comunicar emociones. Un estudio con 1,289 participantes encontró que los tempos rápidos se asocian con mayor "vitalidad", y el modo mayor obtuvo valoraciones más altas de vitalidad que el modo menor.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia3.jpg" alt="Ritmos marcados y energía">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Ritmo, <em>activación y movimiento</em></div>
+                    <p><strong>September</strong>, <strong>Uptown Funk</strong> e <strong>I Got You (I Feel Good)</strong> fueron seleccionadas por sus ritmos marcados y alta energía, que favorecen una experiencia de activación y ganas de moverse.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia4.jpg" alt="Calidez y bienestar">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Calidez, <em>no solo activación</em></div>
+                    <p><strong>What a Wonderful World</strong> e <strong>I'm Yours</strong> funcionan como contrapeso: no buscan máxima activación, sino una sensación de calidez, optimismo y bienestar sostenido.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia5.jpg" alt="Letra positiva y familiaridad">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Letra positiva <em>y familiaridad</em></div>
+                    <p>La presencia de letras positivas puede reforzar la interpretación emocional, pero no produce automáticamente felicidad: la familiaridad y las experiencias personales también modifican considerablemente la respuesta a la música.</p>
+                </div>
+            </div>
+        </div>
+        <div class="science-dots" id="science-dots"></div>
+
+        <p class="science-footnote">Basado en investigación sobre percepción musical y emoción (PubMed Central).</p>
+    </div>
+</section>
+
+    <footer>
+        <div class="foot-logo">Blue<em>'s</em></div>
+        <p>
+            Desarrollo de Software · 1°C · Crea-J 2026<br>
+            Asesor: Ing. Carlos Amílcar Chávez
+        </p>
+        <p class="foot-disclaimer">
+            Sitio web con fines estrictamente académicos y educativos. No persigue fines de lucro. Todo el material audiovisual utilizado pertenece a sus respectivos autores bajo el derecho de cita didáctica.
+        </p>
+    </footer>
+
+    <script src="../js/playlist.js"></script>
+    <script src="../js/idioma.js"></script>
+    <script src="../js/modoclaro.js"></script>
+</body>
+</html>

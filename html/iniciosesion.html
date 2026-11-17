@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue's - Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/loginyregistro.css">
+    <link rel="stylesheet" href="../css/Modoclaro.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+    <canvas id="waveCanvas"></canvas>
+    <canvas id="partCanvas"></canvas>
+
+    <nav>
+        <span class="nav-logo">Blue<em>'s</em></span>
+    </nav>
+    <a href="start.html" class="back-start" aria-label="Volver al inicio" title="¿Regresar al inicio?">&larr;</a>
+
+    <div class="page-container">
+        <main class="form-section">
+            <h1 class="hero-title">
+                UN GUSTO<br>VERTE DE<br><span class="cursive-text">vuelta!</span>
+            </h1>
+            
+            <form class="auth-form" id="login-form" novalidate>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Correo electrónico" autocomplete="email" required>
+                    <input type="password" name="password" placeholder="Contraseña" minlength="5" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Iniciar sesión</button>
+                    <p class="switch-text">¿No tienes una cuenta? <a href="Registro.html" class="toggle-link"><br>Regístrate</a></p>
+                </div>
+            </form>
+
+            <p id="message-box" class="message-alert" aria-live="polite"></p>
+        </main>
+
+        <aside class="image-section">
+            <img src="../images/guitarra.jpg" alt="Blues Guitar" class="hero-image">
+        </aside>
+    </div>
+
+    <div id="modal-exito" class="modal-oculto">
+        <div class="modal-contenido">
+            <h2>¡Has iniciado sesión!</h2>
+            <p>Bienvenido de nuevo a Blue's. En breve serás redirigido...</p>
+        </div>
+    </div>
+
+    <script src="../js/fondo.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/idioma.js"></script>
+    <script src="../js/modoclaro.js"></script>
+</body>
+</html>

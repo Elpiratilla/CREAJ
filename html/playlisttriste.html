@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/Modoclaro.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="mood-triste">
+
+    <canvas id="waveCanvas"></canvas>
+    <canvas id="partCanvas"></canvas>
+
+    <nav>
+        <a href="home.html" class="nav-logo">Blue<em>'s</em></a>        <ul class="nav-links">
+          <li><a href="home.html">Inicio</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="mood-pill"><span class="mood-dot"></span>Playlist de musicoterapia · Tristeza</div>
+          <h1>
+            Emoción:
+            <em>Tristeza</em>
+          </h1>
+          <p class="hero-sub">
+           Melodías que acompañan el duelo, calman el llanto y no te piden fingir que estás bien.
+          </p>
+          <p class="hero-quote">
+            "La melancolía es la felicidad de estar triste."
+            <cite> – Victor Hugo</cite>
+          </p>
+
+          <div class="playlist-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="track-search" placeholder="Buscar canción o artista en esta playlist…" autocomplete="off">
+            <span class="search-count" id="search-count"></span>
+          </div>
+        </div>
+
+          <div class="emocionimg">
+            <img src="../images/templatetriste.jpg" alt="triste">
+            <div class="vinyl-badge" aria-hidden="true">
+              <div class="disc">
+                <div class="label"><span>Tristeza</span></div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+<div class="app-shell">
+    <main class="library">
+        <div class="tracklist">
+            <button class="tracklist-toggle" id="tracklist-toggle" aria-expanded="true" aria-controls="tracklist-body">
+                <span class="tracklist-toggle-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    Canciones
+                    <span class="track-count-badge" id="track-count-badge">0</span>
+                </span>
+                <span class="collapsed-hint">Toca para ver las canciones</span>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="tracklist-body" id="tracklist-body">
+                <div class="tracklist-body-inner">
+                    <div class="track-columns">
+                        <span>#</span>
+                        <span>Título</span>
+                        <span> - Álbum - </span>
+                        <span style="text-align:right;">Duración</span>
+                    </div>
+                    <div id="track-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="spotify-player">
+        <h4 class="spotify-player-label">Reproduciendo</h4>
+        <iframe id="spotify-frame" src="" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </aside>
+</div>
+
+    <div id="custom-tracks-source" style="display:none;">
+
+        <div class="custom-track"
+            data-title="Skinny Love"
+            data-artist="Bon Iver"
+            data-album="For Emma, Forever Ago"
+            data-art="BB"
+            data-spotify="https://open.spotify.com/intl-es/track/3B3eOgLJSqPEA0RfboIQVM?si=e3f57b8c86b04ec3"
+            data-info="Tema indie folk desgarrador respaldado por una guitarra acústica, que habla sobre una relación frágil, desgastada y a punto de colapsar a pesar del dolor."></div>
+
+        <div class="custom-track"
+            data-title="I'd Rather Go Blind"
+            data-artist="Etta James"
+            data-album="Tell Mama"
+            data-art="EJ"
+            data-spotify="https://open.spotify.com/embed/track/0nhif8SqUaTDk36nY6DjU4"
+            data-info="Interpretada por Etta James en 1967, es un clásico soul-blues sobre el dolor de ver partir a quien se ama; su voz cruda la volvió un referente del género."></div>
+
+        <div class="custom-track"
+            data-title="Flightless Bird, American Mouth"
+            data-artist="Iron & Wine"
+            data-album="The Shepherd's Dog"
+            data-art="AD"
+            data-spotify="https://open.spotify.com/intl-es/track/1fEGtTZjrjJW8eUeewnNJR?si=456b2bb295604314"
+            data-info="Composición de indie folk melancólica y poética que aborda la pérdida de la inocencia, la madurez y la añoranza del pasado a través de metáforas visuales."></div>
+
+        <div class="custom-track" data-title="White Winter Hymnal" data-artist="Fleet Foxes" data-album="Fleet Foxes" data-art="NC" data-spotify="https://open.spotify.com/intl-es/track/0GegHVxeozw3rdjte45Bfx?si=9b8177c9511e4930"
+            data-info="Pieza de indie folk caracterizada por sus armonías vocales pastorales y un tono de cuento invernal sobre la camaradería y la fugacidad del tiempo."></div>
+
+        <div class="custom-track" data-title="Heartbeats" data-artist="José González" data-album="Veneer" data-art="EP" data-spotify="https://open.spotify.com/intl-es/track/5ibNaVO251Pb2c0Wdl00gG?si=f7430a5b5c8b430a"
+            data-info="Versión acústica íntima del tema original de The Knife, enfocada en la fugacidad de los encuentros amorosos y las huellas emocionales que dejan."></div>
+
+        <div class="custom-track" data-title="Feeling Good" data-artist="Nina Simone" data-album="I Put A Spell On You" data-art="EP" data-spotify="https://open.spotify.com/intl-es/track/6Rqn2GFlmvmV4w9Ala0I1e?si=0f8df8b5b7094fea"
+            data-info="Clásico del jazz/soul que expresa la liberación, la renovación y la eufórica sensación de comenzar una nueva etapa en la vida."></div>
+
+        <div class="custom-track" data-title="Someone Like You" data-artist="Adele" data-album="21" data-art="EJ" data-spotify="https://open.spotify.com/intl-es/track/1zwMYTA5nlNjZxYrvBB2pV?si=9a737d056215448f"
+            data-info="Balada de piano sobre la madurez emocional, el dolor de la ruptura y la aceptación al desearle lo mejor a una expareja que ha seguido adelante."></div>
+
+        <div class="custom-track" data-title="The Scientist" data-artist="Coldplay" data-album="A Rush of Blood to the Head" data-art="BK" data-spotify="https://open.spotify.com/intl-es/track/75JFxkI2RXiU7L9VXzMkle?si=97cd34fb2396405c"
+            data-info="Tema de rock alternativo enfocado en el arrepentimiento, el deseo de regresar al principio de una relación y la dificultad de descifrar el amor."></div>
+
+        <div class="custom-track" data-title="The Sound of Silence" data-artist= "Simon & Garfunkel" data-album="The Singer" data-art="AD" data-spotify="https://open.spotify.com/intl-es/track/3YfS47QufnLDFA71FUsgCM?si=f546d856037c4d94"
+            data-info="Folk clásico que reflexiona sobre la falta de comunicación humana, la desconexión social y la soledad en el mundo moderno."></div>
+
+        <div class="custom-track" data-title="Photograph" data-artist="Ed Sheeran" data-album="x (Deluxe Edition)" data-art="BM" data-spotify="https://open.spotify.com/intl-es/track/1HNkqx9Ahdgi1Ixy2xkKkL?si=5e4ffd017d8f49c4"
+            data-info="Balada acústica que aborda cómo la distancia en una relación se puede sobrellevar a través de los recuerdos y las fotografías guardadas."></div>
+
+        <div class="custom-track" data-title="Hurt" data-artist="Johnny Cash" data-album="American IV: The Man Comes Around" data-art="SN" data-spotify="https://open.spotify.com/intl-es/track/28cnXtME493VX9NOw9cIUh?si=476d61c4be314f8a"
+            data-info="Profunda y desgarradora versión del tema de Nine Inch Nails que habla sobre el paso del tiempo, la fragilidad humana, los errores pasados y el arrepentimiento."></div>
+    </div>
+
+<div class="science-carousel" id="science-carousel">
+    <div class="science-point active">
+        <div class="science-point-image">
+            <img src="../images/ciencia1.jpg" alt="Tempo lento y modo menor">
+        </div>
+        <div class="science-point-body">
+            <div class="science-point-title">Tempo lento, <em>modo menor</em></div>
+            <p>Esta playlist no busca necesariamente eliminar la tristeza, sino acompañarla mediante música que comparte características acústicas asociadas con estados emocionales de baja activación. La investigación sobre emoción musical ha encontrado repetidamente una asociación entre tempo lento, modo menor y percepción de tristeza.</p>
+        </div>
+    </div>
+    <div class="science-point">
+        <div class="science-point-image">
+            <img src="../images/ciencia3.jpg" alt="Acompañar la emoción">
+        </div>
+        <div class="science-point-body">
+            <div class="science-point-title">Acompañar, <em>no eliminar</em></div>
+            <p>Esto es especialmente interesante porque una canción triste no necesariamente empeora el estado emocional. La música puede permitir que la persona reconozca y procese un estado emocional existente. Las respuestas emocionales musicales dependen tanto de las características acústicas como de la experiencia personal y la familiaridad con la canción.</p>
+        </div>
+    </div>
+    <div class="science-point">
+        <div class="science-point-image">
+            <img src="../images/ciencia4.jpg" alt="Voces íntimas">
+        </div>
+        <div class="science-point-body">
+            <div class="science-point-title">Voces íntimas, <em>temas de pérdida</em></div>
+            <p><strong>Skinny Love</strong>, <strong>The Scientist</strong>, <strong>Someone Like You</strong> y <strong>Hurt</strong> utilizan interpretaciones vocales íntimas y temáticas relacionadas con pérdida, ruptura, arrepentimiento o vulnerabilidad. Esto genera una correspondencia entre contenido lírico y estructura musical, haciendo que la playlist resulte emocionalmente coherente.</p>
+        </div>
+    </div>
+    <div class="science-point">
+        <div class="science-point-image">
+            <img src="../images/ciencia5.jpg" alt="Contemplación y memoria">
+        </div>
+        <div class="science-point-body">
+            <div class="science-point-title">Contemplación <em>y memoria</em></div>
+            <p><strong>The Sound of Silence</strong> y <strong>Flightless Bird, American Mouth</strong> añaden una sensación más contemplativa, mientras que <strong>Heartbeats</strong> y <strong>Photograph</strong> introducen nostalgia y memoria afectiva. Hay además una razón psicológica para no eliminar automáticamente toda música triste de una playlist para alguien que está triste: sentirse comprendido o acompañado resulta diferente de simplemente aumentar el malestar.</p>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="science-dots" id="science-dots"></div>
+
+    <footer>
+        <div class="foot-logo">Blue<em>'s</em></div>
+        <p>
+            Desarrollo de Software · 1°C · Crea-J 2026<br>
+            Asesor: Ing. Carlos Amílcar Chávez
+        </p>
+        <p class="foot-disclaimer">
+            Sitio web con fines estrictamente académicos y educativos. No persigue fines de lucro. Todo el material audiovisual utilizado pertenece a sus respectivos autores bajo el derecho de cita didáctica.
+        </p>
+    </footer>
+
+    <script src="../js/playlist.js"></script>
+    <script src="../js/idioma.js"></script>
+    <script src="../js/modoclaro.js"></script>
+</body>
+</html>

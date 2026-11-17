@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue's - Adivina la Emoción</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/adivinacancion.css">
+  <link rel="stylesheet" href="../css/Modoclaro.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <nav class="game-nav">
+    <a href="home.html" id="game-home-logo" class="nav-logo" aria-label="Volver a Blue's">Blue<em>'s</em></a>
+    <a href="home.html" class="game-nav-back" id="game-nav-home-btn">← Volver al Home</a>
+  </nav>
+
+  <main class="game-shell">
+    <a class="back-link btn-back-home" id="game-home-link" href="home.html">&larr; Volver al Home</a>
+
+    <section class="intro-screen" id="intro-screen" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow">Blue's · Juego musical</p>
+        <h1 id="intro-title">Adivina la <em>Emoción</em></h1>
+        <p class="game-intro">Escucha una canción del repertorio de Blue's y descubre qué emoción transmite.</p>
+      </div>
+
+      <div class="intro-image-slot" id="intro-carousel">
+        <img class="intro-carousel-image is-active" src="../images/ciencia3.jpg" alt="Imagen del juego Adivina la Emoción">
+        <img class="intro-carousel-image" src="../images/ciencia4.jpg" alt="Imagen del juego Adivina la Emoción">
+        <img class="intro-carousel-image" src="../images/ciencia2.jpg" alt="Imagen del juego Adivina la Emoción">
+        <img class="intro-carousel-image" src="../images/ciencia5.jpg" alt="Imagen del juego Adivina la Emoción">
+      </div>
+
+      <div class="rules-block">
+        <p class="rules-label">Reglas del juego</p>
+        <ul class="rules-list">
+          <li> <strong>Tienes 30 segundos</strong> para adivinar qué emoción transmite la canción según Blue's.</li>
+          <li>Elige una emoción entre Tranquilo, Alegre, Ansioso, Triste y Amor.</li>
+          <li>Con <strong>3 respuestas malas </strong> , pierdes la partida.</li>
+          <li>Con <strong>3 aciertos</strong>, ganas y desbloqueas el premio.</li>
+        </ul>
+      </div>
+
+      <button class="start-button" id="start-game" type="button">Empezar juego</button>
+    </section>
+
+    <div class="game-view" id="game-view" hidden>
+      <div class="game-view-nav">
+        <a href="home.html" class="game-view-home-btn" id="game-view-home-btn">← Volver al Home</a>
+        <span class="game-view-pill">Partida en juego</span>
+      </div>
+    <div class="game-top">
+      <section class="game-header" aria-labelledby="game-title">
+        <p class="eyebrow">Blue's · Juego musical</p>
+        <h1 id="game-title">Adivina la <em>Emoción</em></h1>
+        <p class="game-intro">Escucha el tema, identifica la emoción que representa en Blue's y responde antes de que se acabe el tiempo.</p>
+      </section>
+
+      <div class="player-panel">
+        <p class="player-label">Escucha el fragmento</p>
+        <iframe id="spotify-player" title="Reproductor de Spotify" src="about:blank" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <p class="player-note">Pulsa reproducir en Spotify y escucha con atención.</p>
+      </div>
+    </div>
+
+    <section class="game-card" aria-live="polite">
+      <div class="game-toolbar">
+        <div class="scoreboard" aria-label="Puntuación">
+          <span><strong id="correct-score">0</strong> aciertos</span>
+          <span><strong id="mistake-score">0</strong> fallas</span>
+        </div>
+      </div>
+
+      <div class="round-status">
+        <span id="round-category" class="category-badge">Emoción oculta</span>
+        <span class="timer-label">Tiempo: <strong id="timer">30</strong>s</span>
+      </div>
+        <p class="question-label">¿Qué emoción representa esta canción?</p>
+
+      <div class="answers" id="answers" aria-label="Opciones de respuesta"></div>
+      <p class="result-message" id="result-message" role="status"></p>
+      <button class="next-button" id="next-button" type="button">Siguiente canción</button>
+    </section>
+    </div>
+  </main>
+
+  <section class="final-overlay victory-overlay" id="victory-overlay" hidden aria-labelledby="victory-title">
+    <div class="confetti-container" id="confetti-container" aria-hidden="true"></div>
+    <div class="final-panel">
+      <p class="eyebrow">Blue's · Recompensa desbloqueada</p>
+      <p>Has reconocido tres emociones musicales.</p>
+      <p>¡Reclama tu premio!</p>
+      <div class="prize-image-slot">
+        <img id="prize-image" src="../images/premio-adivinacancion.png" alt="Premio por completar el juego">
+      </div>
+      <div class="final-actions">
+        <button class="restart-button" id="victory-restart" type="button">Volver a jugar</button>
+        <a href="home.html" class="final-home-button" id="victory-home-btn">Volver al Home</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-overlay failure-overlay" id="failure-overlay" hidden aria-labelledby="failure-title">
+    <div class="final-panel">
+      <div class="failure-image-slot">
+        <img id="failure-image" src="../images/fallo-adivinacancion.png" alt="Imagen de participación finalizada">
+      </div>
+      <h2 id="failure-title">Gracias por participar</h2>
+      <p>Has alcanzado tres respuestas fallidas. Gracias por participar.</p>
+      <div class="final-actions">
+        <button class="restart-button" id="failure-restart" type="button">Volver al principio</button>
+        <a href="home.html" class="final-home-button" id="failure-home-btn">Volver al Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/adivinacancion.js"></script>
+  <script src="../js/idioma.js"></script>
+  <script src="../js/modoclaro.js"></script>
+</body>
+</html>
