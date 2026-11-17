@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/Modoclaro.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="mood-tranquilo">
+
+    <canvas id="waveCanvas"></canvas>
+    <canvas id="partCanvas"></canvas>
+
+    <nav>
+        <a href="home.html" class="nav-logo">Blue<em>'s</em></a>        <ul class="nav-links">
+          <li><a href="home.html">Inicio</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="mood-pill"><span class="mood-dot"></span>Playlist de musicoterapia · Tranquilidad</div>
+          <h1>
+            Emoción:
+            <em>Tranquilidad</em>
+          </h1>
+          <p class="hero-sub">
+           Pausas sonoras para bajar el ritmo, respirar hondo y quedarte quieto un rato.
+          </p>
+          <p class="hero-quote">
+            "Sonríe, respira y ve despacio."
+            <cite> – Thich Nhat Hanh</cite>
+          </p>
+
+          <div class="playlist-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="track-search" placeholder="Buscar canción o artista en esta playlist…" autocomplete="off">
+            <span class="search-count" id="search-count"></span>
+          </div>
+        </div>
+
+          <div class="emocionimg">
+            <img src="../images/calma.png" alt="tranquilo">
+            <div class="vinyl-badge" aria-hidden="true">
+              <div class="disc">
+                <div class="label"><span>Tranquilidad</span></div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+<div class="app-shell">
+    <main class="library">
+        <div class="tracklist">
+            <button class="tracklist-toggle" id="tracklist-toggle" aria-expanded="true" aria-controls="tracklist-body">
+                <span class="tracklist-toggle-label">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    Canciones
+                    <span class="track-count-badge" id="track-count-badge">0</span>
+                </span>
+                <span class="collapsed-hint">Toca para ver las canciones</span>
+                <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="tracklist-body" id="tracklist-body">
+                <div class="tracklist-body-inner">
+                    <div class="track-columns">
+                        <span>#</span>
+                        <span>Título</span>
+                        <span> - Álbum - </span>
+                        <span style="text-align:right;">Duración</span>
+                    </div>
+                    <div id="track-list"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="spotify-player">
+        <h4 class="spotify-player-label">Reproduciendo</h4>
+        <iframe id="spotify-frame" src="" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </aside>
+</div>
+
+    <div id="custom-tracks-source" style="display:none;">
+
+        <div class="custom-track"
+            data-title="Near Light"
+            data-artist="Olafur Arnalds"
+            data-album="Living Room Songs"
+            data-art="NL"
+            data-spotify="https://open.spotify.com/intl-es/track/6Xajr512QEGAZ20bqAWkyT?si=66d45026007f4889"
+            data-info="Pieza neoclásica instrumental que combina piano melancólico e instrumentos de cuerda. Trata sobre buscar claridad, calma y nostalgia en momentos de introspección."></div>
+
+        <div class="custom-track"
+            data-title="Says"
+            data-artist="Nils Frahm"
+            data-album="Spaces"
+            data-art="S"
+            data-spotify="https://open.spotify.com/intl-es/track/5626KdflSKfeDK7RJQfSrE?si=1be9715aad2c43e2"
+            data-info="Una obra progresiva de música ambiental y electrónica suave. Transmite una sensación de viaje mental, calma expansiva y contemplación profunda a medida que los sintetizadores van creciendo."></div>
+
+        <div class="custom-track"
+            data-title="An Ending (Ascent)"
+            data-artist="Brian Eno"
+            data-album="Apollo: Atmospheres."
+            data-art="AE"
+            data-spotify="https://open.spotify.com/intl-es/track/4ZknuVR2jOpMOcfwWpsuEr?si=99903e225e1a472f"
+            data-info="Clásico del género ambient diseñado para evocar ingravidez, paz y trascendencia. Transmite la sensación de una despedida tranquila o una transición pacífica."></div>
+
+        <div class="custom-track" data-title="On the Nature of Daylight" data-artist="Max Richter" data-album="The Blue Notebooks" data-art="NC" data-spotify="https://open.spotify.com/intl-es/track/56oReVXIfUO9xkX7pHmEU0?si=7390ed21f1394ccb"
+            data-info="Composición minimalista para cuerdas de Max Richter (2004); una de las piezas contemporáneas más utilizadas en cine y televisión por su atmósfera introspectiva y melancólica."></div>
+
+        <div class="custom-track" data-title="Svefn-g-englar" data-artist="Sigur Rós" data-album="Agaestis byrjun" data-art="EP" data-spotify="https://open.spotify.com/intl-es/track/07eGxuz8bL6QMsRqEe1Adu?si=d268d4a00b5c4e96"
+            data-info="Tema de post-rock etéreo y adormecedor en islandés inventado (Hopelandic). Su título se traduce como Ángeles del sueño y transmite una sensación de paz profunda, como estar flotando entre sueños."></div>
+
+        <div class="custom-track" data-title="Nuvole Bianche" data-artist="Ludovico Einaudi" data-album="Una Mattina" data-art="EP" data-spotify="https://open.spotify.com/intl-es/track/3weNRklVDqb4Rr5MhKBR3D?si=106c66a50cfd48fb"
+            data-info="Pieza de piano neoclásica muy emotiva. Nubes blancas evoca pureza, nostalgia, ligereza y una dulce calma mental."></div>
+
+        <div class="custom-track" data-title="River Flows In You" data-artist="Yiruma" data-album="First Love" data-art="EJ" data-spotify="https://open.spotify.com/intl-es/track/2agBDIr9MYDUducQPC1sFU?si=6473bff7a26e4432"
+            data-info="Una de las obras de piano contemporáneo más populares; transmite la fluidez del amor, la ternura y la serenidad de dejarse llevar."></div>
+
+        <div class="custom-track" data-title="Only Time" data-artist="Enya" data-album="A Day Without Rain" data-art="BK" data-spotify="https://open.spotify.com/intl-es/track/2gam98EBUKAY2Y8xYtcRR2?si=3efcbd5b49824589"
+            data-info="Tema new age sobre la incertidumbre del futuro, el paso del tiempo y la idea de que solo el tiempo puede curar las heridas o dar respuestas."></div>
+
+        <div class="custom-track" data-title="Your Hand in Mine" data-artist="Explosions In The Sky" data-album="19" data-art="AD" data-spotify="https://open.spotify.com/intl-es/track/3HBcQ5GenzAlBhCIgDGL3x?si=8343adda2fc549f8"
+            data-info="Pieza instrumental de post-rock crescendos intensos que habla (sin palabras) sobre la devoción, el apoyo incondicional y la compañía a través de las dificultades."></div>
+
+        <div class="custom-track" data-title="Time" data-artist="Hans Zimmer" data-album="The Earth Is not" data-art="BM" data-spotify="https://open.spotify.com/intl-es/track/6ZFbXIJkuI1dVNWvzJzown?si=698812ab76374b26"
+            data-info="Perteneciente a la banda sonora de la película Inception; una composición épica y melancólica que explora la inevitabilidad del tiempo, la nostalgia y la aceptación."></div>
+    </div>
+
+    <section class="science-section">
+    <div class="science-card">
+        <div class="mood-pill"><span class="mood-dot"></span>Por qué esta selección</div>
+        <h2 class="science-title">La ciencia detrás de <em>esta playlist</em></h2>
+        <p class="science-intro">Busca producir un entorno auditivo de baja activación, priorizando piezas instrumentales, voces no lingüísticas y arreglos con pocos elementos agresivos o percusivos.</p>
+
+        <div class="science-carousel" id="science-carousel">
+            <div class="science-point active">
+                <div class="science-point-image">
+                    <img src="../images/ciencia1.jpg" alt="Piezas instrumentales">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Menos letra, <em>más textura</em></div>
+                    <p>La ausencia o reducción de letra disminuye la cantidad de información semántica que el oyente debe procesar, permitiendo que la atención se centre en el timbre, la armonía y la textura sonora.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia2.jpg" alt="Tempo lento y calma">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Tempo lento, <em>calma e introspección</em></div>
+                    <p>Los tempos más lentos tienden a asociarse con menor activación, mientras que determinados patrones armónicos y melódicos pueden favorecer sensaciones de calma o introspección.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia4.jpg" alt="Evidencia sobre estrés">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Evidencia <em>sobre el estrés</em></div>
+                    <p>Una revisión sistemática de 104 ensayos aleatorizados encontró que la música produjo una reducción significativa tanto del estrés psicológico como del fisiológico.</p>
+                </div>
+            </div>
+            <div class="science-point">
+                <div class="science-point-image">
+                    <img src="../images/ciencia5.jpg" alt="Construcción gradual">
+                </div>
+                <div class="science-point-body">
+                    <div class="science-point-title">Texturas sostenidas <em>y evolución gradual</em></div>
+                    <p><strong>Near Light</strong>, <strong>An Ending (Ascent)</strong> y <strong>On the Nature of Daylight</strong> presentan dinámica contenida y ausencia de percusión dominante. <strong>Time</strong> y <strong>Your Hand in Mine</strong> aumentan la intensidad progresivamente, útiles por su construcción gradual y ausencia de letra explícita.</p>
+                </div>
+            </div>
+        </div>
+        <div class="science-dots" id="science-dots"></div>
+
+        <p class="science-footnote">Basado en investigación sobre percepción musical y emoción (PubMed Central).</p>
+    </div>
+</section>
+    <footer>
+
+        <div class="foot-logo">Blue<em>'s</em></div>
+        <p>
+            Desarrollo de Software · 1°C · Crea-J 2026<br>
+            Asesor: Ing. Carlos Amílcar Chávez
+        </p>
+        <p class="foot-disclaimer">
+            Sitio web con fines estrictamente académicos y educativos. No persigue fines de lucro. Todo el material audiovisual utilizado pertenece a sus respectivos autores bajo el derecho de cita didáctica.
+        </p>
+    </footer>
+
+    <script src="../js/playlist.js"></script>
+    <script src="../js/idioma.js"></script>
+    <script src="../js/modoclaro.js"></script>
+</body>
+</html>

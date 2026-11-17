@@ -1,0 +1,413 @@
+.theme-control {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 8px;
+}
+
+.language-control {
+  gap: 8px !important;
+  padding-left: 14px !important;
+}
+
+.nav-controls .nav-actions {
+  gap: 10px;
+}
+
+@media (min-width: 901px) {
+  nav {
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  nav .nav-links {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin-left: 8px;
+  }
+
+  nav .nav-controls {
+    margin-left: auto !important;
+  }
+
+  nav:not(:has(.nav-links)) .nav-controls {
+    margin-left: 24px !important;
+  }
+}
+
+.theme-toggle {
+  padding: 8px 12px;
+  border: 1px solid rgba(61, 84, 160, 0.55);
+  border-radius: 999px;
+  background: rgba(61, 84, 160, 0.12);
+  color: var(--cream, #e8dcc8);
+  font: 500 10px 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.theme-toggle:hover {
+  background: rgba(61, 84, 160, 0.24);
+  border-color: rgba(61, 84, 160, 0.9);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid rgba(61, 84, 160, 0.65);
+  outline-offset: 2px;
+}
+
+body:not(.light-mode) .theme-toggle {
+  background: rgba(61, 84, 160, 0.16);
+  color: #e8dcc8;
+  border-color: rgba(127, 141, 216, 0.5);
+}
+
+body:not(.light-mode) .theme-toggle:hover {
+  background: rgba(61, 84, 160, 0.3);
+}
+
+body.light-mode {
+  --cream: #243b73;
+  --cream-dim: #52658f;
+  --text: #243b73;
+  --text-cream: #243b73;
+  --text-muted: #52658f;
+  background: #e8dcc8 !important;
+  color: #28304b !important;
+}
+
+body.light-mode nav {
+  background: rgba(222, 211, 195, 0.94) !important;
+  border-color: rgba(61, 84, 160, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(40, 48, 75, 0.12) !important;
+}
+
+body.light-mode .nav-links a,
+body.light-mode .nav-logo,
+body.light-mode .nav-actions a,
+body.light-mode .nav-actions .home-access {
+  color: #28304b !important;
+}
+
+body.light-mode .theme-toggle {
+  background: #e1d4c0;
+  color: #28304b;
+  border-color: rgba(61, 84, 160, 0.45);
+}
+
+body.light-mode .language-control {
+  color: #52658f !important;
+  border-left-color: rgba(61, 84, 160, 0.25) !important;
+}
+
+body.light-mode .language-toggle {
+  background: #e1d4c0 !important;
+  border-color: rgba(61, 84, 160, 0.55) !important;
+  color: #243b73 !important;
+}
+
+body.light-mode .language-es,
+body.light-mode .language-en {
+  color: #243b73 !important;
+}
+
+body.light-mode .language-en {
+  opacity: 0.62;
+}
+
+body.light-mode .language-control:not(.is-english) .language-es,
+body.light-mode .language-control.is-english .language-en {
+  color: #e8dcc8 !important;
+  opacity: 1 !important;
+}
+
+body.light-mode .language-thumb {
+  background: #3d54a0 !important;
+  box-shadow: 0 2px 8px rgba(40, 48, 75, 0.22) !important;
+}
+
+body.light-mode .session-profile-trigger {
+  background: #e1d4c0 !important;
+  border-color: rgba(61, 84, 160, 0.45) !important;
+  color: #243b73 !important;
+}
+
+body.light-mode .session-profile-avatar {
+  background: #3d54a0 !important;
+  color: #e8dcc8 !important;
+}
+
+body.light-mode .session-profile-card {
+  background: #ded3c3 !important;
+  border-color: rgba(61, 84, 160, 0.35) !important;
+  color: #243b73 !important;
+  box-shadow: 0 18px 40px rgba(40, 48, 75, 0.18) !important;
+}
+
+body.light-mode .session-profile-card strong {
+  color: #243b73 !important;
+}
+
+body.light-mode .session-profile-status,
+body.light-mode .session-profile-email {
+  color: #52658f !important;
+}
+
+body.light-mode .session-profile-logout {
+  color: #3d54a0 !important;
+  border-color: rgba(61, 84, 160, 0.35) !important;
+}
+
+body.light-mode .session-profile-logout:hover {
+  background: rgba(61, 84, 160, 0.1) !important;
+  color: #243b73 !important;
+}
+
+body.light-mode #surpriseBtn {
+  color: #e8dcc8 !important;
+}
+
+body.light-mode .access-message {
+  border-color: rgba(61, 84, 160, 0.38);
+  border-left-color: #3d54a0;
+  background: rgba(61, 84, 160, 0.12);
+  color: #243b73 !important;
+  box-shadow: 0 12px 26px rgba(40, 48, 75, 0.12);
+}
+
+body.light-mode .contact-form {
+  border-color: rgba(61, 84, 160, 0.2);
+  box-shadow: 0 18px 42px rgba(40, 48, 75, 0.14);
+}
+
+body.light-mode .contact-form .button-indigo {
+  color: #e8dcc8 !important;
+  background: #3d54a0;
+  box-shadow: 0 10px 24px rgba(61, 84, 160, 0.24);
+}
+
+body.light-mode .carrusel-container,
+body.light-mode .mood-card,
+body.light-mode .team-card,
+body.light-mode .contact-panel,
+body.light-mode .contact-form,
+body.light-mode .form-section,
+body.light-mode .science-card,
+body.light-mode .spotify-player,
+body.light-mode .blues-page,
+body.light-mode .tabla,
+body.light-mode .service-item,
+body.light-mode .tracklist,
+body.light-mode .player-bar {
+  background: rgba(235, 225, 210, 0.9) !important;
+  color: #28304b !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode .slide-title,
+body.light-mode .section-title,
+body.light-mode .mood-name,
+body.light-mode .team-name,
+body.light-mode .hero-sub,
+body.light-mode .track-title {
+  color: #28304b !important;
+}
+
+body.light-mode p,
+body.light-mode label,
+body.light-mode .slide-description,
+body.light-mode .infoex p,
+body.light-mode .team-content p,
+body.light-mode .contact-intro p,
+body.light-mode .track-artist,
+body.light-mode .track-album {
+  color: #5a6278 !important;
+}
+
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+  background: rgba(222, 211, 195, 0.94) !important;
+  color: #28304b !important;
+  border-color: rgba(61, 84, 160, 0.28) !important;
+}
+
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder {
+  color: #7b8499 !important;
+}
+
+body.light-mode .game-nav {
+  background: rgba(222, 211, 195, 0.94) !important;
+  border-color: rgba(61, 84, 160, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(40, 48, 75, 0.12) !important;
+}
+
+body.light-mode .game-nav .nav-logo {
+  color: #243b73 !important;
+}
+
+body.light-mode .game-card,
+body.light-mode .game-nav + .game-shell .player-panel {
+  background: rgba(235, 225, 210, 0.92) !important;
+  border-color: rgba(61, 84, 160, 0.25) !important;
+  color: #28304b !important;
+  box-shadow: 0 24px 70px rgba(40, 48, 75, 0.14) !important;
+}
+
+body.light-mode .game-shell h1,
+body.light-mode .game-shell h2,
+body.light-mode .game-shell .question-label,
+body.light-mode .game-shell .player-label,
+body.light-mode .game-shell .scoreboard strong,
+body.light-mode .game-shell .timer-label strong {
+  color: #243b73 !important;
+}
+
+body.light-mode .game-shell .game-intro,
+body.light-mode .game-shell .player-note,
+body.light-mode .game-shell .scoreboard,
+body.light-mode .game-shell .timer-label,
+body.light-mode .game-shell .result-message {
+  color: #52658f !important;
+}
+
+body.light-mode .game-shell .answer-button {
+  background: rgba(61, 84, 160, 0.08) !important;
+  border-color: rgba(61, 84, 160, 0.28) !important;
+  color: #243b73 !important;
+}
+
+body.light-mode .game-shell .answer-button:hover:not(:disabled),
+body.light-mode .game-shell .answer-button:focus-visible {
+  background: rgba(61, 84, 160, 0.2) !important;
+}
+
+body.light-mode .game-shell .final-panel {
+  background: rgba(235, 225, 210, 0.94) !important;
+  border-color: rgba(61, 84, 160, 0.28) !important;
+  box-shadow: 0 24px 80px rgba(40, 48, 75, 0.2) !important;
+}
+
+body.light-mode .intro-screen {
+  background: rgba(235, 225, 210, 0.92) !important;
+  border-color: rgba(61, 84, 160, 0.25) !important;
+  box-shadow: 0 24px 70px rgba(40, 48, 75, 0.14) !important;
+}
+
+body.light-mode .intro-screen h1,
+body.light-mode .intro-screen .rules-label,
+body.light-mode .intro-screen .rules-list strong {
+  color: #243b73 !important;
+}
+
+body.light-mode .intro-screen .game-intro,
+body.light-mode .intro-screen .rules-list,
+body.light-mode .intro-image-slot span {
+  color: #52658f !important;
+}
+
+body.light-mode .start-button {
+  background: #3d54a0 !important;
+  border-color: #3d54a0 !important;
+  color: #e8dcc8 !important;
+}
+
+/* Textos sobre imágenes/paneles oscuros: se mantienen claros
+   sin importar el tema, porque el fondo detrás de ellos nunca cambia. */
+body.light-mode .tabla-visual-caption p {
+  color: #e8dcc8 !important;
+}
+
+body.light-mode .tabla-visual-caption span {
+  color: #7f8dd8 !important;
+}
+
+body.light-mode .blues-card figcaption {
+  color: #e8dcc8 !important;
+}
+
+body.light-mode .track-meta .track-art {
+  color: #e8dcc8 !important;
+}
+
+/* Modal de "sesión iniciada" (iniciosesion.html) */
+body.light-mode .modal-oculto,
+body.light-mode .modal-visible {
+  background-color: rgba(40, 48, 75, 0.45) !important;
+}
+
+body.light-mode .modal-contenido {
+  background-color: #ded3c3 !important;
+  color: #243b73 !important;
+  border-color: rgba(61, 84, 160, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(40, 48, 75, 0.18) !important;
+}
+
+body.light-mode .modal-contenido h2 {
+  color: #243b73 !important;
+}
+
+body.light-mode .modal-contenido p {
+  color: #52658f !important;
+}
+
+body.light-mode .home-game-btn,
+body.light-mode .game-nav-back,
+body.light-mode .game-view-home-btn,
+body.light-mode .game-callout-btn {
+  background: #3d54a0 !important;
+  color: #f5e7cf !important;
+  border-color: rgba(61, 84, 160, 0.6) !important;
+}
+
+body.light-mode .game-callout-card {
+  background: linear-gradient(135deg, rgba(239, 229, 214, 0.96), rgba(222, 211, 195, 0.98)) !important;
+  border-color: rgba(61, 84, 160, 0.25) !important;
+  box-shadow: 0 16px 40px rgba(40, 48, 75, 0.12) !important;
+}
+
+body.light-mode .game-callout-title {
+  color: #243b73 !important;
+}
+
+body.light-mode .game-callout-desc {
+  color: #52658f !important;
+}
+
+body.light-mode .final-home-button {
+  background: #e1d4c0 !important;
+  color: #243b73 !important;
+  border-color: rgba(61, 84, 160, 0.4) !important;
+}
+
+@media (max-width: 720px) {
+  nav .nav-controls {
+    width: 100%;
+    justify-content: flex-end;
+    column-gap: 10px;
+  }
+
+  .theme-toggle {
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+
+  .theme-control {
+    margin-left: auto;
+  }
+}
