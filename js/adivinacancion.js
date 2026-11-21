@@ -1,5 +1,5 @@
 if (sessionStorage.getItem('bluesGameAccess') !== 'true') {
-  window.location.replace('home.html');
+  window.location.replace('index.html');
 }
 
 const songList = [
@@ -214,7 +214,7 @@ nextButton.addEventListener('click', startRound);
 startGameButton.addEventListener('click', beginGame);
 victoryRestart.addEventListener('click', returnToIntro);
 failureRestart.addEventListener('click', returnToIntro);
-document.querySelectorAll('a[href*="home.html"]').forEach(link => {
+document.querySelectorAll('a[href*="index.html"]').forEach(link => {
   link.addEventListener('click', leaveGame);
 });
 prizeImage.addEventListener('error', () => prizeImage.classList.add('is-missing'));

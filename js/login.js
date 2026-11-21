@@ -105,10 +105,10 @@ function iniciarSesion(form, event) {
         modal.classList.add('modal-visible');
         setTimeout(() => {
             modal.classList.remove('modal-visible');
-            window.location.href = "home.html";
+            window.location.href = "index.html";
         }, 2000);
     } else {
-        window.location.href = "home.html";
+        window.location.href = "index.html";
     }
 
 }
